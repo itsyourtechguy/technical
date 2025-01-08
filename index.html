@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical</title>
+</head>
+<body>
+    <h1>Basics</h1>
+    <h2>JavaScript Fundamentals</h2>
+    <h3>What is the difference between var, let, and const?</h3>
+    <p>var: Function-scoped and can be redeclared, leading to potential bugs.
+        let: Block-scoped, ideal for variables that may change.
+        const: Block-scoped, used for variables that shouldn’t be reassigned.</p>
+    <h3>Explain the event loop in JavaScript.</h3>
+    <p>The event loop ensures non-blocking execution in JavaScript by handling asynchronous operations. It moves completed tasks from the callback queue to the call stack when the stack is empty.</p>
+    <h3>What is the difference between == and === in JavaScript?</h3>
+    <p>== compares values after type conversion (loose equality).
+        === compares values and types (strict equality).</p>
+    <h3>What is a closure in JavaScript?</h3>
+    <p>A closure is a function that retains access to its outer lexical scope, even after the outer function has executed.</p>
+    function outer() {
+        let count = 0;
+        return function inner() {
+          count++;
+          return count;
+        };
+      }
+      const counter = outer();
+      console.log(counter()); // 1
+      console.log(counter()); // 2
+      
+      <h3>How does async/await improve asynchronous programming?</h3>
+      <p>async/await makes asynchronous code easier to read and maintain by allowing you to write it in a synchronous style. It is built on top of Promises.</p>
+    <h2>React Basics</h2>
+    <h3>What are React hooks, and why are they used?</h3>
+    <p>A:
+        React hooks, like useState and useEffect, allow function components to manage state and side effects, making code more concise and reusable.</p>
+        <h3>How does the virtual DOM work?</h3>
+        <p>The virtual DOM is a lightweight copy of the actual DOM. React updates the virtual DOM first, calculates the difference (diffing), and applies only the changes to the real DOM for better performance.</p>
+    <h3>How do you manage state in a React application?</h3>
+    <p>Component State: Using useState or useReducer for local state.
+        Global State: Libraries like Redux, Context API, or Zustand</p>
+        <h3>What is the difference between controlled and uncontrolled components in React?</h3>
+    <p>Controlled Component: The form input's value is controlled by React state.
+        Uncontrolled Component: The DOM maintains the input's state, and refs are used to access its value.</p>
+        
+        <h2>Angular Basics</h2>
+    <h3>What is two-way data binding in Angular?</h3>
+    <p>Two-way data binding ensures synchronization between the model and the view. Changes in the UI automatically update the data and vice versa using the [(ngModel)] directive.</p>
+    <h3>What are services in Angular?</h3>
+    <p>Services are singleton objects that enable data sharing and logic reuse across components in Angular, typically implemented with dependency injection.</p>
+<h3>What is dependency injection in Angular?</h3>
+<p>Dependency injection (DI) is a design pattern where Angular injects required dependencies (e.g., services) into components automatically, improving modularity and testing.</p>
+<h2>How does Angular handle routing?</h2>
+<p>Angular uses the RouterModule to configure routes. You define routes in the app-routing.module.ts file and navigate between them using routerLink or programmatically via the Router service.</p>
+    <h2>Theoretical Questions</h2>
+<h3>What is the difference between synchronous and asynchronous programming?</h3>
+<p>A:
+
+    Synchronous: Code is executed line-by-line, blocking further execution until the current task is finished.
+    Asynchronous: Code executes independently, allowing non-blocking operations via callbacks, promises, or async/await.</p>
+<h3>How do RESTful APIs work?</h3>
+<p>RESTful APIs follow the principles of REST, using HTTP methods like GET, POST, PUT, and DELETE to perform CRUD operations on resources identified by URLs.</p>
+<h3>Explain the concept of REST in web development.</h3>
+<p>REST (Representational State Transfer) is an architectural style that uses standard HTTP methods like GET, POST, PUT, and DELETE to interact with resources represented by URLs.</p>
+<h3>What is the difference between client-side and server-side rendering?</h3>
+<p>Client-side rendering (CSR): JavaScript renders content in the browser after downloading.
+    Server-side rendering (SSR): The server generates the full HTML for a page and sends it to the browser, improving SEO and initial load times.</p>
+
+<h2>Soft Skills and Approach</h2>
+<h3>How do you approach learning a new technology?</h3>
+<p>Start by understanding the core concepts through documentation or tutorials, build small projects to apply learning, and gradually scale to more complex tasks.</p>
+<h3>Can you describe a challenging project you worked on and how you handled it?</h3>
+<p>Refer to your experience at E-ship Simplified or Dreammill, highlighting how you tackled scalability or performance issues using React, Redux, or Node.js.</p>
+<h2>Practical Angular/React Scenarios</h2>
+<h3>How would you optimize a React app for performance?</h3>
+<p>Use React.memo for component re-renders.
+    Optimize state management by colocating state.
+    Use lazy loading for routes and components.
+    Implement code splitting with tools like Webpack.</p>
+<h3>How would you implement error handling in an Angular application? </h3>
+<p>Use interceptors for HTTP error handling.
+    Provide user feedback with alerts or modals.
+    Implement a global error handler using the ErrorHandler class.</p>
+<h2>Debugging and Problem-Solving</h2>
+<h3>How do you debug a complex issue in JavaScript?</h3>
+<p>Reproduce the issue in isolation.
+    Use debugging tools like Chrome DevTools.
+    Log key variables to track data flow.
+    If necessary, write unit tests to pinpoint the bug.</p>
+<h3>If a React component isn’t rendering correctly, how would you troubleshoot?</h3>
+<p>Check props and state for errors.
+    Ensure parent components pass correct data.
+    Validate lifecycle methods or hooks usage.
+    Inspect for potential syntax or logic errors.</p>
+<h3>How can you improve the performance of a web application?</h3>
+<p>Minimize DOM manipulations.
+    Use lazy loading for assets.
+    Optimize images and static files.
+    Avoid unnecessary re-renders in React using React.memo or useCallback.</p>
+
+
+</body>
+</html>
