@@ -3,103 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical</title>
+    <title>Technical Interview Preparation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        h3 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            font-size: 14px;
+            color: #333;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .answer {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Basics</h1>
-    <h2>JavaScript Fundamentals</h2>
-    <h3>What is the difference between var, let, and const?</h3>
-    <p>var: Function-scoped and can be redeclared, leading to potential bugs.
-        let: Block-scoped, ideal for variables that may change.
-        const: Block-scoped, used for variables that shouldn’t be reassigned.</p>
-    <h3>Explain the event loop in JavaScript.</h3>
-    <p>The event loop ensures non-blocking execution in JavaScript by handling asynchronous operations. It moves completed tasks from the callback queue to the call stack when the stack is empty.</p>
-    <h3>What is the difference between == and === in JavaScript?</h3>
-    <p>== compares values after type conversion (loose equality).
-        === compares values and types (strict equality).</p>
-    <h3>What is a closure in JavaScript?</h3>
-    <p>A closure is a function that retains access to its outer lexical scope, even after the outer function has executed.</p>
-    function outer() {
-        let count = 0;
-        return function inner() {
-          count++;
-          return count;
-        };
-      }
-      const counter = outer();
-      console.log(counter()); // 1
-      console.log(counter()); // 2
-      
-      <h3>How does async/await improve asynchronous programming?</h3>
-      <p>async/await makes asynchronous code easier to read and maintain by allowing you to write it in a synchronous style. It is built on top of Promises.</p>
-    <h2>React Basics</h2>
-    <h3>What are React hooks, and why are they used?</h3>
-    <p>A:
-        React hooks, like useState and useEffect, allow function components to manage state and side effects, making code more concise and reusable.</p>
-        <h3>How does the virtual DOM work?</h3>
-        <p>The virtual DOM is a lightweight copy of the actual DOM. React updates the virtual DOM first, calculates the difference (diffing), and applies only the changes to the real DOM for better performance.</p>
-    <h3>How do you manage state in a React application?</h3>
-    <p>Component State: Using useState or useReducer for local state.
-        Global State: Libraries like Redux, Context API, or Zustand</p>
-        <h3>What is the difference between controlled and uncontrolled components in React?</h3>
-    <p>Controlled Component: The form input's value is controlled by React state.
-        Uncontrolled Component: The DOM maintains the input's state, and refs are used to access its value.</p>
-        
-        <h2>Angular Basics</h2>
-    <h3>What is two-way data binding in Angular?</h3>
-    <p>Two-way data binding ensures synchronization between the model and the view. Changes in the UI automatically update the data and vice versa using the [(ngModel)] directive.</p>
-    <h3>What are services in Angular?</h3>
-    <p>Services are singleton objects that enable data sharing and logic reuse across components in Angular, typically implemented with dependency injection.</p>
-<h3>What is dependency injection in Angular?</h3>
-<p>Dependency injection (DI) is a design pattern where Angular injects required dependencies (e.g., services) into components automatically, improving modularity and testing.</p>
-<h2>How does Angular handle routing?</h2>
-<p>Angular uses the RouterModule to configure routes. You define routes in the app-routing.module.ts file and navigate between them using routerLink or programmatically via the Router service.</p>
-    <h2>Theoretical Questions</h2>
-<h3>What is the difference between synchronous and asynchronous programming?</h3>
-<p>A:
+    <h1>Technical Interview Preparation</h1>
+    
+    <h2>Frontend Fundamentals</h2>
+    <div class="question">
+        <h3>Q1: What is the Virtual DOM and how does it improve performance in React?</h3>
+    </div>
+    <div class="answer">
+        <strong>A1:</strong>
+        <ul>
+            <li>The Virtual DOM is an in-memory representation of the real DOM elements.</li>
+            <li>React uses it to batch updates and determine the minimal set of changes needed to update the actual DOM.</li>
+            <li>This reduces direct manipulation of the DOM, which is slow, leading to improved performance.</li>
+        </ul>
+    </div>
 
-    Synchronous: Code is executed line-by-line, blocking further execution until the current task is finished.
-    Asynchronous: Code executes independently, allowing non-blocking operations via callbacks, promises, or async/await.</p>
-<h3>How do RESTful APIs work?</h3>
-<p>RESTful APIs follow the principles of REST, using HTTP methods like GET, POST, PUT, and DELETE to perform CRUD operations on resources identified by URLs.</p>
-<h3>Explain the concept of REST in web development.</h3>
-<p>REST (Representational State Transfer) is an architectural style that uses standard HTTP methods like GET, POST, PUT, and DELETE to interact with resources represented by URLs.</p>
-<h3>What is the difference between client-side and server-side rendering?</h3>
-<p>Client-side rendering (CSR): JavaScript renders content in the browser after downloading.
-    Server-side rendering (SSR): The server generates the full HTML for a page and sends it to the browser, improving SEO and initial load times.</p>
+    <div class="question">
+        <h3>Q2: How does the CSS Box Model work?</h3>
+    </div>
+    <div class="answer">
+        <strong>A2:</strong>
+        <ul>
+            <li>The CSS Box Model consists of four areas: content, padding, border, and margin.</li>
+            <li><strong>Content:</strong> The actual content inside the box.</li>
+            <li><strong>Padding:</strong> Space between the content and the border.</li>
+            <li><strong>Border:</strong> Surrounds the padding (if any) and content.</li>
+            <li><strong>Margin:</strong> Space outside the border, separating the element from others.</li>
+        </ul>
+    </div>
 
-<h2>Soft Skills and Approach</h2>
-<h3>How do you approach learning a new technology?</h3>
-<p>Start by understanding the core concepts through documentation or tutorials, build small projects to apply learning, and gradually scale to more complex tasks.</p>
-<h3>Can you describe a challenging project you worked on and how you handled it?</h3>
-<p>Refer to your experience at E-ship Simplified or Dreammill, highlighting how you tackled scalability or performance issues using React, Redux, or Node.js.</p>
-<h2>Practical Angular/React Scenarios</h2>
-<h3>How would you optimize a React app for performance?</h3>
-<p>Use React.memo for component re-renders.
-    Optimize state management by colocating state.
-    Use lazy loading for routes and components.
-    Implement code splitting with tools like Webpack.</p>
-<h3>How would you implement error handling in an Angular application? </h3>
-<p>Use interceptors for HTTP error handling.
-    Provide user feedback with alerts or modals.
-    Implement a global error handler using the ErrorHandler class.</p>
-<h2>Debugging and Problem-Solving</h2>
-<h3>How do you debug a complex issue in JavaScript?</h3>
-<p>Reproduce the issue in isolation.
-    Use debugging tools like Chrome DevTools.
-    Log key variables to track data flow.
-    If necessary, write unit tests to pinpoint the bug.</p>
-<h3>If a React component isn’t rendering correctly, how would you troubleshoot?</h3>
-<p>Check props and state for errors.
-    Ensure parent components pass correct data.
-    Validate lifecycle methods or hooks usage.
-    Inspect for potential syntax or logic errors.</p>
-<h3>How can you improve the performance of a web application?</h3>
-<p>Minimize DOM manipulations.
-    Use lazy loading for assets.
-    Optimize images and static files.
-    Avoid unnecessary re-renders in React using React.memo or useCallback.</p>
+    <div class="question">
+        <h3>Q3: Explain the difference between synchronous and asynchronous JavaScript.</h3>
+    </div>
+    <div class="answer">
+        <strong>A3:</strong>
+        <ul>
+            <li><strong>Synchronous:</strong> Code is executed line-by-line; each line must complete before the next starts.</li>
+            <li><strong>Asynchronous:</strong> Code can execute without waiting for previous lines to complete, using callbacks, promises, or async/await for handling operations like fetching data.</li>
+        </ul>
+    </div>
 
+    <h2>State Management</h2>
+    <div class="question">
+        <h3>Q4: How does the Context API differ from Redux?</h3>
+    </div>
+    <div class="answer">
+        <strong>A4:</strong>
+        <ul>
+            <li><strong>Context API:</strong> Built-in React feature for passing data through the component tree without prop drilling. Suitable for simpler state needs.</li>
+            <li><strong>Redux:</strong> A more robust, scalable state management solution with a centralized store, supporting complex state logic, middleware, and time-travel debugging.</li>
+        </ul>
+    </div>
 
-</body>
-</html>
+    <div class="question">
+        <h3>Q5: What are the benefits of using Redux Thunk?</h3>
+    </div>
+    <div class="answer">
+        <strong>A5:</strong>
+        <ul>
+            <li>Redux Thunk allows you to write action creators that return functions instead of plain objects.</li>
+            <li>This helps in managing asynchronous operations like API calls within Redux actions, enabling dispatch of multiple actions (e.g., request started, request succeeded/failed).</li>
+        </ul>
+    </div>
+
+    <h2>Testing</h2>
+    <div class="question">
+        <h3>Q6: What is the difference between unit testing and integration testing?</h3>
+    </div>
+    <div class="answer">
+        <strong>A6:</strong>
+        <ul>
+            <li><strong>Unit Testing:</strong> Tests individual components or functions in isolation to ensure they work as expected.</li>
+            <li><strong>Integration Testing:</strong> Tests how different pieces of the system work together, ensuring data flows correctly between modules.</li>
+        </ul>
+    </div>
+
+    <div class="question">
+        <h3>Q7: How would you test a React component using Jest and React Testing Library?</h3>
+    </div>
+    <div class="answer">
+        <strong>A7:</strong>
+        <ul>
+            <li>Import the component and necessary libraries.</li>
+            <li>Use <code>render()</code> from React Testing Library to render the component.</li>
+            <li>Use <code>screen</code> to query elements and <code>fireEvent</code> to simulate user interactions.</li>
+            <li>Write assertions with Jest’s <code>expect()</code> to verify the component behaves as expected.</li>
+        </ul>
+    </div>
+
+    <h2>CI/CD</h2>
+    <div class="question">
+        <h3>Q8: Explain the importance of Continuous Integration (CI) in frontend development.</h3>
+    </div>
+    <div class="answer">
+        <strong>A8:</strong>
+        <ul>
+            <li>CI involves regularly integrating code changes into a shared repository and automatically running tests.</li>
+            <li>This ensures early detection of integration issues, reduces bugs, and speeds up the development process.</li>
+        </ul>
+    </div>
+
+    <div class="question">
+        <h3>Q9: What steps would you include in a CI pipeline for a React application?</h3>
+    </div>
+    <div class="answer">
+        <strong>A9:</strong>
+        <ul>
+            <li><strong>Code Checkout:</strong> Pull the latest code from the repository.</li>
+            <li><strong>Linting:</strong> Run linting tools (e.g., ESLint) to check for code style issues.</li>
+            <li><strong>Unit Testing:</strong> Execute unit tests using Jest or similar.</li>
+            <li><strong>Build:</strong> Compile the application using Webpack.</li>
+            <li><strong>End-to-End Testing:</strong> Run end-to-end tests using Cypress.</li>
+            <li><strong>Deployment:</strong> Deploy to a staging environment and eventually to production after approval.</li>
+        </ul>
+    </div>
+
+    <h2>Scalability</h2>
+    <div class="question">
+        <h3>Q10: How do you ensure a web application can scale effectively?</h3>
+    </div>
+    <div class="answer">
+        <strong>A10:</strong>
+        <ul>
+            <li><strong>Code Splitting:</strong> Load parts of the application as needed.</li>
+            <li><strong>Lazy Loading:</strong> Load components or resources only when required.</li>
+            <li><strong>Caching:</strong> Use browser caching and service workers to reduce server load.</li>
+            <li><strong>Optimized Rendering:</strong> Use techniques like pagination, infinite scrolling, and virtualized lists for large data sets.</li>
+        </ul>
+    </div>
+
+    <div class="question">
+        <h3>Q11: How would you handle high traffic in a frontend application?</h3>
+    </div>
+    <div class="answer">
+        <strong>A11:</strong>
+        <ul>
+            <li><strong>CDN:</strong> Use a Content Delivery Network to serve static assets quickly.</li>
+            <li><strong>Load Balancing:</strong> Distribute incoming traffic across multiple servers.</li>
+            <li><strong>Asynchronous Loading:</strong> Load critical resources first and defer non-critical ones.</li>
+        </ul>
+    </div>
+
+    <h2>Coding Practice</h2>
+    <div class="question">
+        <h3>Q12: Write a function in JavaScript that debounces a given function.</h3>
+    </div>
+    <div class="answer">
+        <strong>A12:</strong>
+        <pre><code>function debounce(func, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+// Usage
+const log = () => console.log('Debounced!');
+const debouncedLog = debounce(log, 2000);
+debouncedLog(); // Will log 'Debounced!' after 2 seconds if not called again within that time.</code></pre>
+    </div>
+
+    <div class="question">
+        <h3>Q13: Write a simple React component that fetches and displays data from an API.</h3>
+    </div>
+    <div class="answer">
+        <strong>A13:</strong>
+        <pre><code>import React, { useState, useEffect } from 'react';
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  return (
+    <div>
+      <h1>Data</h1>
